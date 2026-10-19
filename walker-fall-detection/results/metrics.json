@@ -1,0 +1,584 @@
+{
+  "meta": {
+    "seed": 7,
+    "n_train": 1500,
+    "n_val": 400,
+    "n_test": 400,
+    "n_features": 26,
+    "feature_names": [
+      "hip_h_last",
+      "hip_h_min",
+      "hip_h_drop",
+      "hip_h_ratio",
+      "head_h_last",
+      "head_h_min",
+      "head_h_ratio",
+      "ang_first",
+      "ang_last",
+      "ang_max",
+      "ang_mean",
+      "ang_delta",
+      "asp_last",
+      "asp_max",
+      "asp_mean",
+      "vy_hip_min",
+      "vy_hip_mean_last",
+      "vy_head_min",
+      "ang_rate_max",
+      "speed_mean",
+      "speed_max",
+      "speed_last",
+      "t_since_vmin",
+      "drop_x_speed",
+      "head_below_hip_frac",
+      "low_hip_frac"
+    ],
+    "runtime_s": 397.2
+  },
+  "results": {
+    "rule_based": {
+      "in_distribution": {
+        "domain": "in_distribution",
+        "n_clips": 400,
+        "n_fall": 144,
+        "n_nonfall": 256,
+        "sensitivity": 0.7638888888888888,
+        "sens_ci": [
+          0.6882302187707267,
+          0.8258334818385741
+        ],
+        "fa_clip_rate": 0.0,
+        "fa_ci": [
+          0.0,
+          0.014784391721725852
+        ],
+        "false_alerts_per_hour": 0.0,
+        "median_latency_s": 0.8898981108697286,
+        "window_auc": 0.8156500039982878,
+        "window_ap": 0.47639663396345455,
+        "per_scenario": {
+          "fall_forward": 0.8333333333333334,
+          "fall_backward": 0.95,
+          "stand": 0.0,
+          "slump": 0.5,
+          "bend_pick": 0.0,
+          "walk": 0.0,
+          "stumble_recover": 0.0,
+          "fall_side": 0.625,
+          "sit_down": 0.0,
+          "controlled_lower": 0.0,
+          "crouch_pick": 0.0
+        },
+        "tau": 0.5
+      },
+      "frontal_view": {
+        "domain": "frontal_view",
+        "n_clips": 400,
+        "n_fall": 144,
+        "n_nonfall": 256,
+        "sensitivity": 0.5277777777777778,
+        "sens_ci": [
+          0.4465785775862376,
+          0.607533390898952
+        ],
+        "fa_clip_rate": 0.00390625,
+        "fa_ci": [
+          0.0006898644160236098,
+          0.02179152424537626
+        ],
+        "false_alerts_per_hour": 0.8999999999999999,
+        "median_latency_s": 0.8356747487838041,
+        "window_auc": 0.7264107996036717,
+        "window_ap": 0.37784855878777496,
+        "per_scenario": {
+          "sit_down": 0.0,
+          "fall_side": 0.5,
+          "bend_pick": 0.0,
+          "fall_backward": 0.675,
+          "controlled_lower": 0.0,
+          "fall_forward": 0.5416666666666666,
+          "walk": 0.0,
+          "stand": 0.0,
+          "stumble_recover": 0.0,
+          "crouch_pick": 0.03125,
+          "slump": 0.2916666666666667
+        },
+        "tau": 0.5
+      },
+      "noisy_occluded": {
+        "domain": "noisy_occluded",
+        "n_clips": 400,
+        "n_fall": 144,
+        "n_nonfall": 256,
+        "sensitivity": 0.7708333333333334,
+        "sens_ci": [
+          0.6956806352474464,
+          0.8319110574831518
+        ],
+        "fa_clip_rate": 0.0390625,
+        "fa_ci": [
+          0.021353804338076477,
+          0.07040055678038956
+        ],
+        "false_alerts_per_hour": 9.0,
+        "median_latency_s": 0.8642947647075987,
+        "window_auc": 0.8155141281508378,
+        "window_ap": 0.4506949978168889,
+        "per_scenario": {
+          "fall_forward": 0.8541666666666666,
+          "sit_down": 0.0,
+          "crouch_pick": 0.03125,
+          "controlled_lower": 0.375,
+          "stumble_recover": 0.0,
+          "fall_backward": 0.975,
+          "stand": 0.0,
+          "fall_side": 0.53125,
+          "walk": 0.0,
+          "bend_pick": 0.0,
+          "slump": 0.5833333333333334
+        },
+        "tau": 0.5
+      },
+      "low_fps_12": {
+        "domain": "low_fps_12",
+        "n_clips": 400,
+        "n_fall": 144,
+        "n_nonfall": 256,
+        "sensitivity": 0.7986111111111112,
+        "sens_ci": [
+          0.7257416096123688,
+          0.855962051603419
+        ],
+        "fa_clip_rate": 0.0078125,
+        "fa_ci": [
+          0.0021450454442769468,
+          0.02803334015679694
+        ],
+        "false_alerts_per_hour": 1.7999999999999998,
+        "median_latency_s": 0.8175726879974281,
+        "window_auc": 0.8270722385427086,
+        "window_ap": 0.492758140553247,
+        "per_scenario": {
+          "crouch_pick": 0.0,
+          "fall_backward": 0.975,
+          "fall_side": 0.5625,
+          "stumble_recover": 0.0,
+          "bend_pick": 0.0,
+          "slump": 0.7083333333333334,
+          "walk": 0.0,
+          "sit_down": 0.0,
+          "fall_forward": 0.8541666666666666,
+          "stand": 0.0,
+          "controlled_lower": 0.08333333333333333
+        },
+        "tau": 0.5
+      },
+      "deployment_mix": {
+        "domain": "deployment_mix",
+        "n_clips": 400,
+        "n_fall": 144,
+        "n_nonfall": 256,
+        "sensitivity": 0.6736111111111112,
+        "sens_ci": [
+          0.5933813653547764,
+          0.7448184376776585
+        ],
+        "fa_clip_rate": 0.04296875,
+        "fa_ci": [
+          0.024159562780836398,
+          0.07529179527730365
+        ],
+        "false_alerts_per_hour": 10.799999999999999,
+        "median_latency_s": 0.8348312032816185,
+        "window_auc": 0.7729725594627674,
+        "window_ap": 0.39248093706252046,
+        "per_scenario": {
+          "stumble_recover": 0.03125,
+          "bend_pick": 0.0,
+          "fall_backward": 0.875,
+          "slump": 0.5,
+          "crouch_pick": 0.03125,
+          "controlled_lower": 0.375,
+          "walk": 0.0,
+          "sit_down": 0.0,
+          "stand": 0.0,
+          "fall_forward": 0.6875,
+          "fall_side": 0.53125
+        },
+        "tau": 0.5
+      }
+    },
+    "gbm_narrow_train": {
+      "in_distribution": {
+        "domain": "in_distribution",
+        "n_clips": 400,
+        "n_fall": 144,
+        "n_nonfall": 256,
+        "sensitivity": 1.0,
+        "sens_ci": [
+          0.974015432733412,
+          0.9999999999999999
+        ],
+        "fa_clip_rate": 0.05078125,
+        "fa_ci": [
+          0.029913524810755977,
+          0.08493182712673211
+        ],
+        "false_alerts_per_hour": 11.7,
+        "median_latency_s": 0.6560203532557649,
+        "window_auc": 0.9997371478566826,
+        "window_ap": 0.9981500569750433,
+        "per_scenario": {
+          "fall_forward": 1.0,
+          "fall_backward": 1.0,
+          "stand": 0.0,
+          "slump": 1.0,
+          "bend_pick": 0.0,
+          "walk": 0.0,
+          "stumble_recover": 0.125,
+          "fall_side": 1.0,
+          "sit_down": 0.0,
+          "controlled_lower": 0.20833333333333334,
+          "crouch_pick": 0.125
+        },
+        "tau": 0.09
+      },
+      "frontal_view": {
+        "domain": "frontal_view",
+        "n_clips": 400,
+        "n_fall": 144,
+        "n_nonfall": 256,
+        "sensitivity": 1.0,
+        "sens_ci": [
+          0.974015432733412,
+          0.9999999999999999
+        ],
+        "fa_clip_rate": 0.29296875,
+        "fa_ci": [
+          0.2406059495949574,
+          0.35145321260231976
+        ],
+        "false_alerts_per_hour": 67.5,
+        "median_latency_s": 0.6399574397112386,
+        "window_auc": 0.9964550610999914,
+        "window_ap": 0.9814751012704368,
+        "per_scenario": {
+          "sit_down": 0.1,
+          "fall_side": 1.0,
+          "bend_pick": 0.675,
+          "fall_backward": 1.0,
+          "controlled_lower": 0.20833333333333334,
+          "fall_forward": 1.0,
+          "walk": 0.0,
+          "stand": 0.0,
+          "stumble_recover": 0.28125,
+          "crouch_pick": 0.9375,
+          "slump": 1.0
+        },
+        "tau": 0.09
+      },
+      "noisy_occluded": {
+        "domain": "noisy_occluded",
+        "n_clips": 400,
+        "n_fall": 144,
+        "n_nonfall": 256,
+        "sensitivity": 0.9930555555555556,
+        "sens_ci": [
+          0.9617143276425165,
+          0.9987731129695979
+        ],
+        "fa_clip_rate": 0.1796875,
+        "fa_ci": [
+          0.13750144557357782,
+          0.23134480537315286
+        ],
+        "false_alerts_per_hour": 42.3,
+        "median_latency_s": 0.6892713349160351,
+        "window_auc": 0.9935527462087208,
+        "window_ap": 0.9755177912700617,
+        "per_scenario": {
+          "fall_forward": 0.9791666666666666,
+          "sit_down": 0.1,
+          "crouch_pick": 0.25,
+          "controlled_lower": 0.625,
+          "stumble_recover": 0.125,
+          "fall_backward": 1.0,
+          "stand": 0.0,
+          "fall_side": 1.0,
+          "walk": 0.017857142857142856,
+          "bend_pick": 0.35,
+          "slump": 1.0
+        },
+        "tau": 0.09
+      },
+      "low_fps_12": {
+        "domain": "low_fps_12",
+        "n_clips": 400,
+        "n_fall": 144,
+        "n_nonfall": 256,
+        "sensitivity": 1.0,
+        "sens_ci": [
+          0.974015432733412,
+          0.9999999999999999
+        ],
+        "fa_clip_rate": 0.06640625,
+        "fa_ci": [
+          0.04187037068241467,
+          0.10376296901376947
+        ],
+        "false_alerts_per_hour": 15.299999999999999,
+        "median_latency_s": 0.6145655586057419,
+        "window_auc": 0.9996575206680521,
+        "window_ap": 0.9975756130571526,
+        "per_scenario": {
+          "crouch_pick": 0.09375,
+          "fall_backward": 1.0,
+          "fall_side": 1.0,
+          "stumble_recover": 0.15625,
+          "bend_pick": 0.0,
+          "slump": 1.0,
+          "walk": 0.0,
+          "sit_down": 0.0,
+          "fall_forward": 1.0,
+          "stand": 0.0,
+          "controlled_lower": 0.375
+        },
+        "tau": 0.09
+      },
+      "deployment_mix": {
+        "domain": "deployment_mix",
+        "n_clips": 400,
+        "n_fall": 144,
+        "n_nonfall": 256,
+        "sensitivity": 1.0,
+        "sens_ci": [
+          0.974015432733412,
+          0.9999999999999999
+        ],
+        "fa_clip_rate": 0.27734375,
+        "fa_ci": [
+          0.22610132283576637,
+          0.33516985160281476
+        ],
+        "false_alerts_per_hour": 65.7,
+        "median_latency_s": 0.6758502449784531,
+        "window_auc": 0.9894058215470395,
+        "window_ap": 0.9632609835480864,
+        "per_scenario": {
+          "stumble_recover": 0.25,
+          "bend_pick": 0.45,
+          "fall_backward": 1.0,
+          "slump": 1.0,
+          "crouch_pick": 0.53125,
+          "controlled_lower": 0.6666666666666666,
+          "walk": 0.03571428571428571,
+          "sit_down": 0.25,
+          "stand": 0.0,
+          "fall_forward": 1.0,
+          "fall_side": 1.0
+        },
+        "tau": 0.09
+      }
+    },
+    "gbm_wide_train": {
+      "in_distribution": {
+        "domain": "in_distribution",
+        "n_clips": 400,
+        "n_fall": 144,
+        "n_nonfall": 256,
+        "sensitivity": 1.0,
+        "sens_ci": [
+          0.974015432733412,
+          0.9999999999999999
+        ],
+        "fa_clip_rate": 0.015625,
+        "fa_ci": [
+          0.00609249965946242,
+          0.039479879820959504
+        ],
+        "false_alerts_per_hour": 3.5999999999999996,
+        "median_latency_s": 0.6854306474056675,
+        "window_auc": 0.9992222154277463,
+        "window_ap": 0.9957447476295888,
+        "per_scenario": {
+          "fall_forward": 1.0,
+          "fall_backward": 1.0,
+          "stand": 0.0,
+          "slump": 1.0,
+          "bend_pick": 0.0,
+          "walk": 0.0,
+          "stumble_recover": 0.0625,
+          "fall_side": 1.0,
+          "sit_down": 0.0,
+          "controlled_lower": 0.0,
+          "crouch_pick": 0.0625
+        },
+        "tau": 0.42
+      },
+      "frontal_view": {
+        "domain": "frontal_view",
+        "n_clips": 400,
+        "n_fall": 144,
+        "n_nonfall": 256,
+        "sensitivity": 0.9930555555555556,
+        "sens_ci": [
+          0.9617143276425165,
+          0.9987731129695979
+        ],
+        "fa_clip_rate": 0.0234375,
+        "fa_ci": [
+          0.010784720423856631,
+          0.050181652935913326
+        ],
+        "false_alerts_per_hour": 5.3999999999999995,
+        "median_latency_s": 0.7069140404406369,
+        "window_auc": 0.9991737590466584,
+        "window_ap": 0.9952171528534215,
+        "per_scenario": {
+          "sit_down": 0.0,
+          "fall_side": 1.0,
+          "bend_pick": 0.0,
+          "fall_backward": 1.0,
+          "controlled_lower": 0.08333333333333333,
+          "fall_forward": 1.0,
+          "walk": 0.0,
+          "stand": 0.0,
+          "stumble_recover": 0.03125,
+          "crouch_pick": 0.09375,
+          "slump": 0.9583333333333334
+        },
+        "tau": 0.42
+      },
+      "noisy_occluded": {
+        "domain": "noisy_occluded",
+        "n_clips": 400,
+        "n_fall": 144,
+        "n_nonfall": 256,
+        "sensitivity": 0.9930555555555556,
+        "sens_ci": [
+          0.9617143276425165,
+          0.9987731129695979
+        ],
+        "fa_clip_rate": 0.07421875,
+        "fa_ci": [
+          0.048025724882263164,
+          0.11300160869326903
+        ],
+        "false_alerts_per_hour": 17.099999999999998,
+        "median_latency_s": 0.7058795920533818,
+        "window_auc": 0.9984137359687639,
+        "window_ap": 0.992130694769677,
+        "per_scenario": {
+          "fall_forward": 1.0,
+          "sit_down": 0.025,
+          "crouch_pick": 0.125,
+          "controlled_lower": 0.375,
+          "stumble_recover": 0.03125,
+          "fall_backward": 1.0,
+          "stand": 0.0,
+          "fall_side": 1.0,
+          "walk": 0.0,
+          "bend_pick": 0.1,
+          "slump": 0.9583333333333334
+        },
+        "tau": 0.42
+      },
+      "low_fps_12": {
+        "domain": "low_fps_12",
+        "n_clips": 400,
+        "n_fall": 144,
+        "n_nonfall": 256,
+        "sensitivity": 1.0,
+        "sens_ci": [
+          0.974015432733412,
+          0.9999999999999999
+        ],
+        "fa_clip_rate": 0.015625,
+        "fa_ci": [
+          0.00609249965946242,
+          0.039479879820959504
+        ],
+        "false_alerts_per_hour": 3.5999999999999996,
+        "median_latency_s": 0.6337777353408511,
+        "window_auc": 0.9996330555161194,
+        "window_ap": 0.9975773897687817,
+        "per_scenario": {
+          "crouch_pick": 0.03125,
+          "fall_backward": 1.0,
+          "fall_side": 1.0,
+          "stumble_recover": 0.0625,
+          "bend_pick": 0.0,
+          "slump": 1.0,
+          "walk": 0.0,
+          "sit_down": 0.0,
+          "fall_forward": 1.0,
+          "stand": 0.0,
+          "controlled_lower": 0.041666666666666664
+        },
+        "tau": 0.42
+      },
+      "deployment_mix": {
+        "domain": "deployment_mix",
+        "n_clips": 400,
+        "n_fall": 144,
+        "n_nonfall": 256,
+        "sensitivity": 0.9930555555555556,
+        "sens_ci": [
+          0.9617143276425165,
+          0.9987731129695979
+        ],
+        "fa_clip_rate": 0.08984375,
+        "fa_ci": [
+          0.06061292900002707,
+          0.1312023923342012
+        ],
+        "false_alerts_per_hour": 20.7,
+        "median_latency_s": 0.7075500288123546,
+        "window_auc": 0.9969669026431572,
+        "window_ap": 0.9862286563564368,
+        "per_scenario": {
+          "stumble_recover": 0.125,
+          "bend_pick": 0.0,
+          "fall_backward": 1.0,
+          "slump": 0.9583333333333334,
+          "crouch_pick": 0.25,
+          "controlled_lower": 0.4166666666666667,
+          "walk": 0.017857142857142856,
+          "sit_down": 0.0,
+          "stand": 0.0,
+          "fall_forward": 1.0,
+          "fall_side": 1.0
+        },
+        "tau": 0.42
+      }
+    }
+  },
+  "importance": {
+    "t_since_vmin": 0.2225349239014688,
+    "vy_hip_min": 0.15038918213820016,
+    "vy_head_min": 0.04959469281918235,
+    "speed_max": 0.016806079586455375,
+    "asp_last": 0.008615132612111923,
+    "ang_delta": 0.007713184357920677,
+    "hip_h_min": 0.00634540769278243,
+    "ang_max": 0.0016848324717316048,
+    "hip_h_drop": 0.0015359400356666313,
+    "asp_mean": 0.0013630074459929735,
+    "head_h_ratio": 0.0013168130984961464,
+    "head_h_last": 0.0012961539427690887,
+    "ang_mean": 0.000756933098912597,
+    "vy_hip_mean_last": 0.0007410232428450106,
+    "hip_h_ratio": 0.0005677293766661965,
+    "ang_rate_max": 0.0005642128508356326,
+    "speed_mean": 0.0005514160771664297,
+    "speed_last": 0.0005386303429421035,
+    "ang_first": 0.0005165428572984077,
+    "head_h_min": 0.0004977900476443123,
+    "drop_x_speed": 0.0004665339165511965,
+    "asp_max": 0.000359068156392565,
+    "ang_last": 0.0003576211185325103,
+    "hip_h_last": 0.00022174085279920894,
+    "head_below_hip_frac": 0.00013844495682857616,
+    "low_hip_frac": 5.864644152638506e-05
+  }
+}
